@@ -14,7 +14,7 @@
         </p>
       </div>
       <div class="w-full max-w-xs md:max-w-sm mx-auto">
-        <form action="" name="contact" method="POST" class="flex flex-wrap max-w-md mb-4 form-input" netlify>
+        <form name="contact" method="POST" class="flex flex-wrap max-w-md mb-4 form-input" data-netlify="true">
           <div class="mb-4 w-full md:w-1/2 md:pr-4">
             <label class="block text-grey-darker text-sm font-bold mb-2">Name</label>
             <input name="name" class="input-field focus:outline-none focus:shadow-outline" type="text" placeholder="name" required>
