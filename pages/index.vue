@@ -94,7 +94,7 @@
           <p class="body-text text-left">{{ post.short }}</p>
         </div>
         <div class="w-full lg:w-1/4 text-center">
-          <a href="/blog" ><button class="btn btn-blue btn-blue-white my-8 p-4 lg:mt-32 focus:outline-none">Read More</button></a>
+          <nuxt-link :to="'/blog/' + post.id"><button class="btn btn-blue btn-blue-white my-8 p-4 lg:mt-32 focus:outline-none">Read More</button></nuxt-link>
         </div>
       </div>
     </section>
@@ -123,6 +123,7 @@ export default {
           description: res.data.stories[0].content.description
         }, 
         post : {
+          id: res.data.stories[1].slug,
           title: res.data.stories[1].content.title,
           topicLinks: Object.values(res.data.stories[1].content.topic_links[0]),
           topicIcons: Object.values(res.data.stories[1].content.topic_icons[0]),

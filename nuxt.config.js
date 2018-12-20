@@ -1,6 +1,7 @@
 const pkg = require('./package')
+const axios = require('axios')
 // remove when deploying production version
-require('dotenv').config()
+// require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
@@ -49,7 +50,20 @@ module.exports = {
     ['storyblok-nuxt', {accessToken: process.env.NODE_ENV == 'production' ? process.env.ACCESS_TOKEN_PROD : process.env.ACCESS_TOKEN_DEV, cacheProvider: 'memory'}]
   ],
   generate: {
-    subFolders: false
+    subFolders: false,
+    routes: function () {
+      return axios.get('https://api.storyblok.com/v1/cdn/stories?&version=published&token=' + process.env.ACCESS_TOKEN_PROD + '&starts_with=blog&cv=' + Math.floor(Date.now() / 1e3))
+      .then(res => {
+        const blogPosts = res.data.stories.map(bp => bp.full_slug);
+        return [
+          '/',
+          '/blog',
+          'projects',
+          'contact',
+          ...blogPosts
+        ]
+      })
+    }
   },
   /*
   ** Axios module configuration

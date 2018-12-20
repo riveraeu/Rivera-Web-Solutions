@@ -36,15 +36,6 @@
   </div>
 </template>
 
-<script>
-import VueResponsiveImage from "~/components/ResponsiveImage.vue";
-export default {
-  components: {
-    VueResponsiveImage
-  }
-};
-</script>
-
 <style>
 @tailwind preflight;
 

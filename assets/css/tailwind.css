@@ -82,7 +82,7 @@
 }
 
 .body-text {
-  @apply text-lg
+  @apply text-lg leading-normal
 }
 .w-0 {
   width: 0%;
