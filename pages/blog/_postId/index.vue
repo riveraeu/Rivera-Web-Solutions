@@ -1,78 +1,84 @@
 <template>
   <div>
-    <section id="banner" :style="{backgroundImage: 'url(' + post.bannerImage + ')'}" class="w-full bg-center bg-cover">
+    <section id="banner" class="w-full bg-center bg-cover">
       <div class="py-32 px-10 text-white container mx-auto">
         <h1 class="text-5xl font-bold text-center py-4">{{ post.title }}</h1>
       </div>
     </section>
     <section>
       <div class="flex flex-wrap container mx-auto">
-        <div class="text-center w-full py-6">
-          <p class="body-text text-grey-darker py-2">Posted: {{ post.date }}</p>
-          <a v-for="(link, index) in post.topicLinks" :key="index" :href="link.url"><img :src="post.topicIcons[index]" :alt="index" class="icons"></a>
+        <div class="w-full sm:w-3/4 mx-auto py-6 text-grey-darker">
+          <p class="body-text px-4 py-2 italic">{{ post.headline }}</p>
+          <p class="body-text px-4 py-2">{{ post.date }}</p>
         </div>
-        <div class="w-full sm:w-3/4 mx-auto body-text text-grey-darker" v-html="post.article"/>
+        <div id="blog-post" class="w-full sm:w-3/4 mx-auto body-text text-grey-darker" v-html="post.article"/>
       </div>
     </section>
+    <vue-disqus :identifier="post.slug" :url="'https://eugene-rivera.com/blog/' + post.slug" shortname="https-eugene-rivera-com" class="container mx-auto mt-8"/>
   </div>
 </template>
+
  <script>
+ import hljs from 'highlight.js';
  export default {
-   asyncData (context) {
-    return context.app.$storyapi.get('cdn/stories', {
-      version: process.env.NODE_ENV == 'production' ? 'published' : 'draft',
-      starts_with: 'blog/'
+  asyncData (context) {
+    return context.app.$storyapi.get('cdn/stories/blog/' + context.params.postId, {
+      version: context.isDev ? 'draft' : 'published'
     }).then(res => {
+      // console.log(res)
       return {
         post: {
-          bannerImage: res.data.stories[0].content.banner_image,
-          title: res.data.stories[0].content.title,
-          topicLinks: Object.values(res.data.stories[0].content.topic_links[0]),
-          topicIcons: Object.values(res.data.stories[0].content.topic_icons[0]),
-          date: res.data.stories[0].content.date,
-          article: res.data.stories[0].content.article
+          slug: res.data.story.slug,
+          title: res.data.story.content.title,
+          headline: res.data.story.content.headline,
+          date: res.data.story.content.date,
+          article: res.data.story.content.article
         }
       }
     }).catch(res => {
       context.error({ statusCode: res.response.status, message: res.response.data })
     })
-  }, 
+  },
   mounted: function () {
-    this.post.topicLinks = this.post.topicLinks.splice(1, 5)
-    this.post.topicIcons = this.post.topicIcons.splice(1, 5)
-    this.post.topicLinks = this.post.topicLinks.filter(link => {
-      return link.url != ''
-    })
-  }
- }
- </script>
-
- <style>
- /* @tailwind preflight; */
- p {
-   @apply p-4 leading-loose
- }
- h2 {
-   @apply text-center py-4 font-medium
- }
- a {
-   @apply text-blue-darkest
- }
- code {
-   @apply bg-grey-lighter text-blue-darkest p-2
- }
- pre {
-   @apply bg-black text-white p-4 my-4 w-3/4 mx-auto overflow-x-scroll
- }
- #banner {
-   height: 40vh;
- }
-@screen sm {
-  pre {
-    @apply w-1/2
+    hljs.initHighlighting()
   }
 }
- /* @tailwind utilities; */
- </style>
+</script>
+
+<style scoped>
+  @tailwind preflight;
+  #blog-post >>> p {
+    @apply p-4 leading-loose
+  }
+  #blog-post >>> h2 {
+    @apply text-center py-4 font-medium
+  }
+  #blog-post >>> a {
+    @apply text-blue-darkest
+  }
+  #blog-post >>> img, #blog-post >>> pre {
+    @apply px-4
+  }
+  #banner {
+    height: 40vh;
+    background-image: url(https://res.cloudinary.com/rivera-web-solutions/image/upload/b_black,o_75,c_scale,w_663/v1545265115/eugene-rivera/maik-jonietz-535261-unsplash-min.jpg)
+  }
+  @screen md {
+    #banner {
+      background-image: url(https://res.cloudinary.com/rivera-web-solutions/image/upload/b_black,o_75,c_scale,w_873/v1545265115/eugene-rivera/maik-jonietz-535261-unsplash-min.jpg)
+    }
+  }
+  @screen lg {
+    #banner {
+      background-image: url(https://res.cloudinary.com/rivera-web-solutions/image/upload/b_black,o_75,c_scale,w_1139/v1545265115/eugene-rivera/maik-jonietz-535261-unsplash-min.jpg)
+    }
+  }
+  @screen xl {
+    #banner {
+      background-image: url(https://res.cloudinary.com/rivera-web-solutions/image/upload/b_black,o_75,c_scale,w_2194/v1545265115/eugene-rivera/maik-jonietz-535261-unsplash-min.jpg)
+    }
+  }
+  @tailwind utilities;
+</style>
  
  

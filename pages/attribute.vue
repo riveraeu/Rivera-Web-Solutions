@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="py-12">
     <div>
       Icons made by
       <a

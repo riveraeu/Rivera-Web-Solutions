@@ -1,7 +1,7 @@
 const pkg = require('./package')
 const axios = require('axios')
 // remove when deploying production version
-// require('dotenv').config()
+require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
@@ -30,13 +30,15 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~/assets/css/tailwind.css'
+    '~/assets/css/tailwind.css',
+    '~/assets/css/highlightjs.min.css'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/disqus'
   ],
 
   /*
@@ -47,8 +49,12 @@ module.exports = {
     'nuxt-purgecss',
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
+    '@nuxtjs/markdownit',
     ['storyblok-nuxt', {accessToken: process.env.NODE_ENV == 'production' ? process.env.ACCESS_TOKEN_PROD : process.env.ACCESS_TOKEN_DEV, cacheProvider: 'memory'}]
   ],
+  purgeCSS: {
+    mode: 'postcss'
+  },
   generate: {
     subFolders: false,
     routes: function () {

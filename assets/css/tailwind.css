@@ -50,13 +50,12 @@
 .btn-blue {
   @apply bg-blue-darkest text-white shadow-lg
 }
-.btn-blue-white{
-  @apply border border-white
+.btn-blue-white {
+  @apply border border-white text-white
 }
-.btn-blue:hover {
+.btn:hover {
   @apply bg-blue-darker
 }
-
 @tailwind utilities;
 
 /**

@@ -1,0 +1,41 @@
+{
+    "heroImage": {
+        "picture": "https://res.cloudinary.com/rivera-web-solutions/image/upload/c_scale,%width%,%height%/v1544473448/eugene-rivera/profile-picture.jpg",
+        "title": "Rivera Web Solutions",
+        "body": "Need a new website? Just looking for a design? How about help with Marketing and SEO? You have come to the right place, Eugene Rivera does all of the above, and more! Working with small businesses and individuals, Eugene helps to provide customers with meaniful solutions. Sound good? Get in touch with Eugene today, or check out what else he has been up to.",
+        "link": "Get A Quote"
+    },
+    "services": { 
+        "title": "My Services",
+        "design": "Design",
+        "designBody": "Starting with basic sketches and wire frames, Eugene works with the customer to flesh out the best design for their business. The end result is a high fedility rendering of what your site will look like.",
+        "dev": "Development",
+        "devBody": "This is where Eugene is at his best. Using the latest web technologies, Eugene builds you a fast and responsive website. Are you going to be updating your site with new content often? Eugene will integrate the right content management system for you, making it easy to upload your new work.",
+        "seo": "Search Engine Optimization",
+        "seoBody": "Now you have a site that looks and preforms great, but how do people find it? Let Eugene help you out, by improving your sites search engine optimization. This will help your site show up when people search on google."
+    },
+    "process": {
+        "title": "Site Building Process",
+        "part1": {
+            "title": "Planning and Design",
+            "body1": "This is where it all begins, the customer contacts Eugene wanting to create a new website. Eugene will then start conducting his research into site with similar intent. This will give both parties a better idea of what the site should look like. At this point we will also figure out your domain name and hosting options for the site. Next Eugene will create some basic mock-ups or \"wireframes\" to start desgining the site layout. Moving to a more detailed rendering, Eugene will share the basic structure of the site with his client.",
+            "body2": "Once both parties are happy with the layout they can start talking about colors, fonts, ect... Also an important part of this phase is to get an idea of how much content the client has, how much they will need to create. The amount of content affects the layout of each page and is really helpful to figure out early in the project. By the end of the design stage Eugene will provide you with a detailed digital rendering of your site design. With client approval, Eugene will move forward into the development stage, and start the coding of your site!",
+            "image": "https://res.cloudinary.com/rivera-web-solutions/image/upload/c_scale,%width%,%height%/v1545349020/eugene-rivera/hal-gatewood-613602-unsplash-min.jpg"
+        },
+        "part2": {
+            "title": "Development",
+            "body1": "This is Eugene's favorite part, he takes the beautiful design created in the previous stage and brings it to life! Eugene uses some of the latest web development technologies to make you site fast and search engine friendly. Most sites Eugene creates are take advantage of static site generators, making the site very cheap to host. During the sites development the design continues to improve as Eugene and his client see what the site looks. This is also when content needs to be finished delivered to Eugene. Not having the client's content makes it hard to design and implement, since Eugene will have to guess at what will go on the site.",
+            "body2": "Line by line, element by element, your site begins to take shape. Working with sites like <a href=\"https://cloudinary.com\">Cloudinary</a>, <a href=\"https://storyblok.com\">Storyblok</a>, and good ole <a href=\"https://en.wikipedia.org/wiki/Markdown\">markdown</a>, Eugene makes it easy for product owners to mange their content.Having laid the ground work in the previous stages, development should go quickly. Development is also a good time to set our selves up for success when it comes to search engine markering. Eugene's sweet site structure and the client's rich content, means we are well on the way to attracting new visitors when the site is launched. Dotting i's and crossing t's, Eugene tests your site to make sure all features are working as intended and the site looks good on all devices.",
+            "image": "https://res.cloudinary.com/rivera-web-solutions/image/upload/c_scale,%width%,%height%/v1545415442/eugene-rivera/pankaj-patel-721645-unsplash-min.jpg"
+        },
+        "part3": {
+            "title": "Launch and Marketing",
+            "body": "This is it, your site is done and ready to show to the world. Deploying your site and adding new content is made easy. Now all you need is people to come and visit your new site. Don't worry Eugene wont leave you here, he is here to help you succeed. Setting up google's search concole and site analytics will help to start collecting data about how people are searching for your site and what they do when they get there. From there we can determine the best course of action to improve your site traffic and increase <a href=\"https://www.ltnow.com/what-is-a-website-conversion/\">conversion</a>."
+        }
+    },
+    "contact": {
+        "title": "Contact",
+        "body": "Wow that sound like just like what you need? Well what are you waiting for! Your web solutions are one click away, drop Eugene a line and get the ball rolling today.",
+        "link": "Get in Touch"
+    }
+}   
