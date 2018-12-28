@@ -14,7 +14,7 @@
         <div id="blog-post" class="w-full sm:w-3/4 mx-auto body-text text-grey-darker" v-html="post.article"/>
       </div>
     </section>
-    <vue-disqus :identifier="post.slug" :url="'https://eugene-rivera.com/blog/' + post.slug" shortname="https-eugene-rivera-com" class="container mx-auto mt-8"/>
+    <vue-disqus :identifier="post.slug" :url="'https://eugene-rivera.com/blog/' + post.slug" shortname="https-eugene-rivera-com" class="container mx-auto my-8 px-4"/>
   </div>
 </template>
 
