@@ -56,7 +56,7 @@ export default {
   },
   asyncData (context) {
     return context.app.$storyapi.get('cdn/stories', {
-      version: process.env.NODE_ENV == 'production' ? 'published' : 'draft',
+      version: context.isDev ? 'draft' : 'published',
       starts_with: 'projects/'
     }).then(res => {
       return {
@@ -86,4 +86,14 @@ export default {
   }
 }
 </script>
+
+<style>
+@tailwind preflight;
+
+  .icons {
+    @apply w-6 mx-1
+  }
+
+@tailwind utilities;
+</style>
 

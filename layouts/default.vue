@@ -19,12 +19,13 @@ export default {
 </script>
 
 <style>
+@tailwind preflight;
 html, body {
   font-family: 'Roboto', sans-serif;
 }
 a {
-  text-decoration: none;
-  color: inherit;
+  @apply text-blue-darkest no-underline
 }
+@tailwind utilities;
 </style>
 

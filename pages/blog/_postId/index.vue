@@ -53,9 +53,6 @@
   #blog-post >>> h2 {
     @apply text-center py-4 font-medium
   }
-  #blog-post >>> a {
-    @apply text-blue-darkest
-  }
   #blog-post >>> img, #blog-post >>> pre {
     @apply px-4
   }
